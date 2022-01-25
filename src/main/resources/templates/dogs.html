@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dogs Dogs Dogs</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+
+<div class="container-fluid text-center">
+    <div><h1>All Dogs</h1></div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Race</th>
+                <th>Birth Date</th>
+                <th>Age</th>
+                <th>Dog Age</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="dogsdb: ${allDogs}">
+                <tr>
+                    <td>[[${dog_id}]]</td>
+                    <td>[[${dog.name}]]</td>
+                    <td>[[${dog.race}]]</td>
+                    <td>[[${dog.birth_date}]]</td>
+                    <td>[[${dog.age}]]</td>
+                    <td>[[${dog.dog_age}]]</td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
